@@ -1,0 +1,37 @@
+def count_valid_passwords(pwds_and_policies):
+    valid_passwords = 0
+
+    for pwd_policy in pwds_and_policies:
+        sep_pwd_policy = pwd_policy.split(' ')
+        # Minimum characters idx = 0, maximum character idx = 1
+        min_and_max_char = list(map(int, sep_pwd_policy[0].split('-')))
+        policy_char_cnt = 0
+
+        # Second split is "Letter:", 0 idx is the letter
+        policy_char = sep_pwd_policy[1][0]
+
+        # The password is contained in the last split
+        pwd = sep_pwd_policy[2]
+
+        # Count the number of times the character appears in the password
+        for char in pwd:
+            if char == policy_char:
+                policy_char_cnt += 1
+
+        # Verify that the character appears at least the minimum and not above the maximum
+        if policy_char_cnt < min_and_max_char[0] or policy_char_cnt > min_and_max_char[1]:
+            continue
+        else:
+            valid_passwords += 1
+
+    return valid_passwords
+
+
+
+
+
+if __name__ == '__main__':
+
+    with open('..\\password_input.txt', 'r') as fd:
+        passwords_and_policy = fd.read().split('\n')
+    print(count_valid_passwords(passwords_and_policy))
