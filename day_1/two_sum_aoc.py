@@ -1,17 +1,6 @@
-
 def two_sum(expense_report, target):
     compl_dict = {}
     for val in expense_report:
-        compl = target - val
-        if val in compl_dict:
-            return (val * compl_dict[val])
-        compl_dict[compl] = val
-
-
-def three_sum(expense_report, target):
-    compl_dict = {}
-    for val in expense_report:
-        val = int(val)
         compl = target - val
         if val in compl_dict:
             return (val * compl_dict[val])
