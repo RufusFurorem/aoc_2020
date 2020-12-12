@@ -19,6 +19,7 @@ def three_sum(expense_report, target):
                     print(value[0], value[1], exp_val)
                     return (value[0] * value[1] * exp_val)
 
+
 if __name__ == "__main__":
     with open('..\\input.csv', 'r') as fd:
         lines = fd.read().strip()
