@@ -66,7 +66,7 @@ def count_valid_passwords_new_policy(pwds_and_policies):
 
 if __name__ == '__main__':
 
-    with open('..\\password_input.txt', 'r') as fd:
+    with open('input.txt', 'r') as fd:
         passwords_and_policy = fd.read().split('\n')
     print(count_valid_passwords(passwords_and_policy))
     print(count_valid_passwords_new_policy(passwords_and_policy))

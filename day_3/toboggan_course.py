@@ -20,7 +20,7 @@ def count_tree_encounters(toboggan_area, w_slope, h_slope):
 if __name__ == '__main__':
 
     total_value = 1
-    with open('..\\toboggan_course.txt', 'r') as fd:
+    with open('input.txt', 'r') as fd:
         toboggan_area = fd.read().split('\n')
 
     # Simple but not efficient logic for extending area
